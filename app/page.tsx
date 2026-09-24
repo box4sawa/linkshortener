@@ -1,17 +1,38 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Link2 } from "lucide-react";
+import { SignInButton, SignUpButton } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
-export default function Home() {
+export default async function Home() {
+  const { userId } = await auth();
+  if (userId) {
+    redirect("/dashboard");
+  }
+
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+      <header className="w-full max-w-3xl flex items-center justify-between py-6 px-16 border-b border-zinc-200 dark:border-zinc-800">
+        <Link href="/" className="flex items-center gap-2 font-semibold text-lg text-zinc-950 dark:text-zinc-50">
+          <Link2 className="h-5 w-5" />
+          <span>Link Shortener</span>
+        </Link>
+        <div className="flex items-center gap-3">
+          <SignInButton mode="modal">
+            <Button variant="ghost" size="sm">
+              Sign In
+            </Button>
+          </SignInButton>
+          <SignUpButton mode="modal">
+            <Button variant="default" size="sm">
+              Sign Up
+            </Button>
+          </SignUpButton>
+        </div>
+      </header>
       <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
             To get started, edit the{" "}
