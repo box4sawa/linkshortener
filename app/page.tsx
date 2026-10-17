@@ -128,12 +128,12 @@ export default async function Home() {
 
           <div className="flex items-center gap-3">
             <SignInButton mode="modal">
-              <Button variant="ghost" size="sm">
+              <Button variant="ghost" size="sm" className="rounded-none">
                 Sign In
               </Button>
             </SignInButton>
             <SignUpButton mode="modal">
-              <Button variant="default" size="sm">
+              <Button variant="default" size="sm" className="rounded-none">
                 Get Started
               </Button>
             </SignUpButton>
@@ -170,7 +170,7 @@ export default async function Home() {
 
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <SignUpButton mode="modal">
-                <Button size="lg" className="w-full gap-2 px-6 sm:w-auto">
+                <Button size="lg" className="w-full gap-2 rounded-none px-6 sm:w-auto">
                   <span>Start Shortening Free</span>
                   <ArrowRight className="h-4 w-4" />
                 </Button>
@@ -179,7 +179,7 @@ export default async function Home() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="w-full px-6 sm:w-auto"
+                  className="w-full rounded-none px-6 sm:w-auto"
                 >
                   Go to Dashboard
                 </Button>
@@ -252,7 +252,7 @@ export default async function Home() {
                       <span className="font-semibold text-foreground">1,482</span>
                       <span className="text-muted-foreground">clicks</span>
                     </div>
-                    <Button variant="outline" size="sm" className="gap-1.5">
+                    <Button variant="outline" size="sm" className="gap-1.5 rounded-none">
                       <Copy className="h-3.5 w-3.5" />
                       <span>Copy</span>
                     </Button>
@@ -381,7 +381,7 @@ export default async function Home() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <SignUpButton mode="modal">
-                <Button size="lg" className="w-full gap-2 px-8 font-semibold sm:w-auto">
+                <Button size="lg" className="w-full gap-2 rounded-none px-8 font-semibold sm:w-auto">
                   <span>Get Started Now</span>
                   <ArrowRight className="h-4 w-4" />
                 </Button>
@@ -390,7 +390,7 @@ export default async function Home() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="w-full px-8 sm:w-auto"
+                  className="w-full rounded-none px-8 sm:w-auto"
                 >
                   Sign In
                 </Button>
