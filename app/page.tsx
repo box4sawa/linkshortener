@@ -169,12 +169,6 @@ export default async function Home() {
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <SignUpButton mode="modal">
-                <Button size="lg" className="w-full gap-2 rounded-none px-6 sm:w-auto">
-                  <span>Start Shortening Free</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              </SignUpButton>
               <SignInButton mode="modal">
                 <Button
                   variant="outline"
